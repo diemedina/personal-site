@@ -1,0 +1,308 @@
+:root {
+  --main-color: #F24B59;
+  --secondary-blue: #447EF2;
+  --color-one: #5E90F2;
+  --color-two: #F2D06B;
+  --color-three: #0D0D0D;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #F9F9FF;
+  /* color: #5E5C7F; */
+  font-family: 'Nunito sans';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+ul li {
+  padding: 8px;
+}
+
+section {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  /* position: sticky; */
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  z-index: 1;
+}
+
+header h2 {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+header a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+header a:after {
+  display: block;
+  border-bottom: solid 3px black;
+  content: '';
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+header a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Main */
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -80px;
+}
+
+.main::before {
+  content: '';
+  height: 1000px;
+  width: 1000px;
+  background: radial-gradient(closest-side, #b4a6fd 0%, transparent 100%) no-repeat;
+  position: absolute;
+  z-index: -1;
+  top: -200px;
+  left: -200px;
+}
+
+.main::after {
+  content: '';
+  height: 1000px;
+  width: 1000px;
+  background: radial-gradient(closest-side, #f0c4f7 0%, transparent 100%) no-repeat;
+  position: absolute;
+  z-index: -1;
+  bottom: 0px;
+  right: -200px;
+}
+
+.main h1 {
+  font-size: 40px;
+}
+
+.main h2::after {
+  content: '';
+  border: 2px solid #303030;
+  border-radius: 12px;
+  margin-left: 4px;
+  animation-name: animation;
+  animation-iteration-count: infinite;
+  animation-duration: .8s;
+}
+
+@keyframes animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.main ul li {
+  /* filter: invert(1); */
+  background:#a8b4dd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.main ul li a {
+  display: flex;
+}
+
+/* About me */
+.about-me {
+  display: flex;
+  gap: 32px;
+  justify-content: space-around;
+  padding: 42px 0px;
+}
+
+.about-me__image img{
+  width: 360px;
+  border-radius: 12px;
+}
+
+.about-me__image {
+  position: relative;
+}
+
+.about-me__image::after {
+  content: 'NAB Show 2023, Las Vegas';
+  bottom: 16px;
+  right: 12px;
+  position: absolute;
+  background-color: #447EF2;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.about-me__image::before {
+  content: '';
+  top: 20px;
+  bottom: -20px;
+  left: -20px;
+  right: 20px;
+  position: absolute;
+  border: 4px solid #447EF2;
+  z-index: -1;
+  color: white;
+  /* padding: 4px 12px; */
+  border-radius: 12px;
+}
+
+.about-me__content {
+  text-align: start;
+}
+
+.about-me__content h2, .about-me__content p {
+  margin-bottom: 12px;
+}
+
+.about-me__content h2 {
+  font-size: 36px;
+}
+
+.about-me__content p {
+  font-weight: lighter;
+}
+
+.about-me__content ul li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.about-me__content ul li img {
+  width: 40px;
+}
+
+/* Experience */
+.experience .title {
+  font-size: 36px;
+  text-align: left;
+}
+.experience__content {
+  background: white;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0px 0px 20px #30303025;
+  margin: 40px 0;
+}
+
+.experience__content article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-left: 1px solid #447EF2;
+  padding: 12px 24px;
+  position: relative;
+}
+
+.experience__content i {
+  position: absolute;
+  top: 20px;
+  left: -21px;
+  background: white;
+  padding: 8px;
+  border-radius: 50%;
+  color: #447EF2;
+}
+
+.experience__content h3 {
+  margin-bottom: 4px;
+}
+
+.experience__content small {
+  font-weight: lighter;
+  color: gray;
+}
+
+.experience__content ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: #447EF2;
+  color: white;
+  /* font-weight: bold; */
+  border-radius: 12px;
+  padding: 4px 12px;
+}
+
+.experience__content ul li img {
+  width: 16px;
+  filter: invert(1);
+}
+
+
+/* Footer */
+footer {
+  background-color: var(--color-three);
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  padding: 24px;
+}
+
+footer > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: start;
+}
+
+
+.footer__image img {
+  width: 120px;
+  height: 120px;
+  background: white;
+  border-radius: 50%;
+}
+
